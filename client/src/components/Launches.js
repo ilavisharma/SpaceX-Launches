@@ -23,7 +23,17 @@ class Launches extends React.Component {
         <MissionKey />
         <Query query={LAUNCHES_QUERY}>
           {({ loading, error, data }) => {
-            if (loading) return <h4>Loading</h4>;
+            if (loading) {
+              return (
+                <div
+                  style={{ display: 'block', margin: 'auto' }}
+                  class="spinner-border"
+                  role="status"
+                >
+                  <span class="sr-only">Loading...</span>
+                </div>
+              );
+            }
             if (error) console.log(error);
 
             return (
