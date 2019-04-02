@@ -27,10 +27,10 @@ class Launches extends React.Component {
               return (
                 <div
                   style={{ display: 'block', margin: 'auto' }}
-                  class="spinner-border"
+                  className="spinner-border"
                   role="status"
                 >
-                  <span class="sr-only">Loading...</span>
+                  <span className="sr-only">Loading...</span>
                 </div>
               );
             }
