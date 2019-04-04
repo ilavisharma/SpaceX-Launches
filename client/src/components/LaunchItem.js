@@ -3,14 +3,27 @@ import classNames from 'classnames';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 
+import './LaunchItem.css';
+
 const LaunchItem = ({
-  launch: { flight_number, mission_name, launch_date_local, launch_success }
+  launch: {
+    flight_number,
+    mission_name,
+    launch_date_local,
+    launch_success,
+    links
+  }
 }) => {
   return (
     <div className="card card-body mg-3">
       <div className="row">
         <div className="col-md-9">
           <h4>
+            <img
+              src={links.mission_patch}
+              alt="mission_patch"
+              className="mission_patch"
+            />
             Mission:{' '}
             <span
               className={classNames({

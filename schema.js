@@ -19,7 +19,8 @@ const LaunchType = new GraphQLObjectType({
     launch_year: { type: GraphQLString },
     launch_date_local: { type: GraphQLString },
     launch_success: { type: GraphQLBoolean },
-    rocket: { type: RocketType }
+    rocket: { type: RocketType },
+    links: {type: LinkType}
   })
 });
 
@@ -32,6 +33,14 @@ const RocketType = new GraphQLObjectType({
     rocket_type: { type: GraphQLString }
   })
 });
+
+// LinkType
+const LinkType= new GraphQLObjectType({
+  name: 'Link',
+  fields: () => ({
+    mission_patch: {type: GraphQLString}
+  })
+})
 
 // Root Query
 const RootQuery = new GraphQLObjectType({
